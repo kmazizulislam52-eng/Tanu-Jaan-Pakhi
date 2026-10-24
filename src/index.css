@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --book-width: 420px;
+    --book-height: 560px;
+    --book-depth: 46px;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --book-width: 320px;
+      --book-height: 480px;
+      --book-depth: 36px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    :root {
+      --book-width: 290px;
+      --book-height: 440px;
+      --book-depth: 32px;
+    }
+  }
+}
+
+/* 3D Transform Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Antique Leather Texture */
+.leather-burgundy {
+  background: 
+    radial-gradient(circle at 30% 25%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+    linear-gradient(135deg, #3d0912 0%, #26050b 45%, #150205 100%);
+  box-shadow: 
+    inset 0 0 40px rgba(0, 0, 0, 0.8),
+    inset 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.leather-spine {
+  background: linear-gradient(90deg, #1b0307 0%, #3a0a13 25%, #4a0f19 50%, #28060d 75%, #150205 100%);
+}
+
+/* Gold Foil Effects */
+.gold-foil-text {
+  background: linear-gradient(135deg, #dfba4f 0%, #fff4c2 30%, #b8860b 55%, #ffd700 85%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+}
+
+.gold-foil-border {
+  border-image: linear-gradient(135deg, #d4af37 0%, #fff3b0 35%, #aa771c 70%, #fbd561 100%) 1;
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+}
+
+/* Deckled Antique Parchment Paper Texture */
+.parchment-paper {
+  background: 
+    radial-gradient(circle at 10% 10%, rgba(218, 165, 32, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 90% 90%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+    linear-gradient(to right, #f4ecd8 0%, #faf5ea 15%, #fbf8f0 85%, #ede1cb 100%);
+  box-shadow: 
+    inset 0 0 30px rgba(180, 140, 90, 0.2),
+    inset 2px 0 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Left Book Page (Gutter Shadow on right edge) */
+.left-page-gutter {
+  background: 
+    linear-gradient(to right, #ece3cc 0%, #f7f1e2 75%, #e1d3b7 97%, #bda785 100%);
+  box-shadow: 
+    inset -10px 0 18px rgba(0, 0, 0, 0.12),
+    inset 0 0 25px rgba(180, 140, 90, 0.15);
+}
+
+/* Right Book Page (Gutter Shadow on left edge) */
+.right-page-gutter {
+  background: 
+    linear-gradient(to right, #bda785 0%, #e1d3b7 3%, #f7f1e2 25%, #faf5ea 100%);
+  box-shadow: 
+    inset 10px 0 18px rgba(0, 0, 0, 0.12),
+    inset 0 0 25px rgba(180, 140, 90, 0.15);
+}
+
+/* Paper Deckled Edge (Page Thickness) */
+.page-block-edge {
+  background: repeating-linear-gradient(
+    90deg,
+    #f3e9d2 0px,
+    #ede1c3 1px,
+    #decfae 2px,
+    #f8f1de 3px
+  );
+  box-shadow: inset 0 0 8px rgba(90, 60, 20, 0.4);
+}
+
+.page-block-edge-vertical {
+  background: repeating-linear-gradient(
+    0deg,
+    #f3e9d2 0px,
+    #ede1c3 1px,
+    #decfae 2px,
+    #f8f1de 3px
+  );
+  box-shadow: inset 0 0 8px rgba(90, 60, 20, 0.4);
+}
+
+/* Page Curvature Shadow during turn */
+.paper-curl-shadow {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(255, 255, 255, 0.18) 15%,
+    rgba(0, 0, 0, 0.08) 50%,
+    transparent 100%
+  );
+}
+
+/* Custom Scrollbar for notes modal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(30, 15, 20, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}

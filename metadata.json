@@ -1,0 +1,6 @@
+{
+  "name": "Reasons I Love You — 3D Romantic Keepsake Book",
+  "description": "A hyper-realistic 3D romantic keepsake book with physical paper leaf turning, procedural Web Audio music box, interactive candlelight, and customizable love notes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
