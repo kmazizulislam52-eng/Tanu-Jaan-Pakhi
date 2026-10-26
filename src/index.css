@@ -24,6 +24,26 @@
   }
 }
 
+/* Classic Suttoni MJ & Noto Serif Bengali Typography */
+.font-suttoni {
+  font-family: 'SutonnyMJ', 'SuttoniMJ', 'Noto Serif Bengali', 'Kalpurush', 'SolaimanLipi', serif;
+}
+
+.font-bengali-handwriting {
+  font-family: 'Galada', 'Dancing Script', 'Noto Serif Bengali', cursive, serif;
+}
+
+.drop-cap-bengali::first-letter {
+  font-size: 2.6em;
+  float: left;
+  line-height: 0.82;
+  margin-right: 0.14em;
+  margin-top: 0.06em;
+  color: #8f1d2c;
+  font-weight: bold;
+  font-family: 'SutonnyMJ', 'SuttoniMJ', 'Noto Serif Bengali', serif;
+}
+
 /* 3D Transform Utilities */
 .preserve-3d {
   transform-style: preserve-3d;

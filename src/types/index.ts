@@ -3,7 +3,9 @@ export type ThemeType = 'rose' | 'blush' | 'navy' | 'peach' | 'lavender';
 export interface ReasonItem {
   id: string;
   number: number;
+  chapterLabel?: string;
   title: string;
+  subtitle?: string;
   reason: string;
   secretNote: string;
   theme: ThemeType;
@@ -11,6 +13,7 @@ export interface ReasonItem {
   polaroidQuote: string;
   polaroidImage: string;
   dateLocation: string;
+  author?: string;
 }
 
 export interface AtmosphereParticle {

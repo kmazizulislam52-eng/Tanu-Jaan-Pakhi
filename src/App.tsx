@@ -9,7 +9,7 @@ import { CreditsModal } from './components/CreditsModal';
 import { PhotoGalleryModal } from './components/PhotoGalleryModal';
 import { soundManager } from './services/audioEngine';
 
-const STORAGE_KEY = 'reasons_i_love_you_saved_chapters';
+const STORAGE_KEY = 'ek_torfa_valobasha_bengali_v3';
 
 export default function App() {
   const [reasons, setReasons] = useState<ReasonItem[]>(() => {
@@ -18,9 +18,8 @@ export default function App() {
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          // If stored reasons still have old placeholder paths, upgrade to user uploaded photos in DEFAULT_REASONS
-          const hasUserPhotos = parsed.some((r: ReasonItem) => r.polaroidImage?.includes('/assets/aistudio/'));
-          if (hasUserPhotos) {
+          const isBengaliStory = parsed.some((r: ReasonItem) => r.chapterLabel || r.title?.includes('গল্প'));
+          if (isBengaliStory) {
             return parsed;
           }
         }
@@ -106,8 +105,8 @@ export default function App() {
 
       {/* Quiet Footer with unboxed metadata and author credits */}
       <footer className="relative z-20 px-6 py-3 border-t border-[#d4af37]/15 bg-[#08040a]/80 backdrop-blur-xs flex flex-col sm:flex-row items-center justify-between text-xs text-[#d1c2a5]/70 gap-2">
-        <div className="flex items-center gap-2">
-          <span>Created by KM Azizul Islam</span>
+        <div className="flex items-center gap-2 font-suttoni">
+          <span>লেখক: কেএম আজিজুল ইসলাম</span>
           <span aria-hidden="true">·</span>
           <a
             href="https://www.facebook.com/km.azizul.islam.122576"
@@ -115,12 +114,12 @@ export default function App() {
             rel="noopener noreferrer"
             className="hover:text-[#ffd700] text-[#ffd700]/90 transition-colors underline decoration-[#d4af37]/40 underline-offset-2 flex items-center gap-1"
           >
-            <span>Facebook</span>
+            <span>Facebook প্রোফাইল</span>
           </a>
         </div>
 
-        <div className="italic font-serif text-[#ffd700]/70 text-center sm:text-right">
-          &ldquo;In all the world, there is no heart for me like yours.&rdquo;
+        <div className="font-suttoni text-[#ffd700]/80 text-center sm:text-right text-[13px]">
+          &ldquo;একটি ছোট্ট ধাক্কা থেকে শুরু, তারপর সারাজীবন একসঙ্গে থাকার গল্প।&rdquo;
         </div>
       </footer>
 

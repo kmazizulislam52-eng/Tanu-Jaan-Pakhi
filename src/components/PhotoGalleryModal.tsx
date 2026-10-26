@@ -27,23 +27,23 @@ export const PhotoGalleryModal: React.FC<PhotoGalleryModalProps> = ({
     >
       <div className="relative w-full max-w-5xl max-h-[92vh] flex flex-col rounded-2xl bg-[#140a17] border border-[#d4af37]/40 shadow-2xl overflow-hidden text-[#f4ecd8]">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#d4af37]/20 bg-[#0f0712]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#d4af37]/20 bg-[#0f0712] font-suttoni">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-full bg-[#3b0914] border border-[#d4af37]/40">
               <Heart className="w-5 h-5 text-[#f43f5e] fill-[#f43f5e]" />
             </div>
             <div>
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#ffd700]">
-                Keepsake Memories Gallery
+              <h2 className="text-xl sm:text-2xl font-bold text-[#ffd700]">
+                স্মৃতির ছবি গ্যালারি (১৩টি ছবি)
               </h2>
               <p className="text-xs text-[#d1c2a5]">
-                ১৩টি ভালোবাসার মুহূর্ত — ১৩ Sacred Moments of Love &amp; Grace
+                একটি ছোট্ট ধাক্কা থেকে শুরু, তারপর সারাজীবন একসঙ্গে থাকার স্মৃতিমালা
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            aria-label="Close photo gallery"
+            aria-label="গ্যালারি বন্ধ করুন"
             className="p-2 rounded-lg text-[#d1c2a5] hover:text-white hover:bg-white/10 transition-colors"
           >
             <X className="w-5 h-5" />
@@ -53,7 +53,7 @@ export const PhotoGalleryModal: React.FC<PhotoGalleryModalProps> = ({
         {/* Gallery Grid */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6">
           {/* Dedication Banner highlighting photo 1 */}
-          <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-[#2c0812] via-[#1c0818] to-[#140824] border border-[#d4af37]/30 flex flex-col sm:flex-row items-center gap-4">
+          <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-[#2c0812] via-[#1c0818] to-[#140824] border border-[#d4af37]/30 flex flex-col sm:flex-row items-center gap-4 font-suttoni">
             <div className="w-20 h-28 sm:w-24 sm:h-32 shrink-0 rounded-lg overflow-hidden border-2 border-[#ffd700]/60 shadow-lg relative bg-black/40">
               <img
                 src={ALL_PHOTO_MEMORIES[0].imagePath}
@@ -63,17 +63,17 @@ export const PhotoGalleryModal: React.FC<PhotoGalleryModalProps> = ({
               />
             </div>
             <div className="text-center sm:text-left">
-              <span className="text-[10px] uppercase tracking-widest text-[#ffd700] font-bold">
-                Special Dedication Portrait ✨
+              <span className="text-[11px] text-[#ffd700] font-bold">
+                বিশেষ উৎসর্গ ছবি ✨
               </span>
-              <h3 className="text-lg sm:text-xl font-serif font-bold text-white mt-0.5">
-                {ALL_PHOTO_MEMORIES[0].title}
+              <h3 className="text-base sm:text-lg font-bold text-white mt-0.5">
+                ভালোবাসার মুখবন্ধ ও উৎসর্গ
               </h3>
-              <p className="font-['Dancing_Script'] text-base sm:text-lg text-[#fbd5a5] italic my-1">
-                &ldquo;{ALL_PHOTO_MEMORIES[0].caption}&rdquo;
+              <p className="text-xs sm:text-sm text-[#fbd5a5] italic my-1">
+                &ldquo;তুমি আমার জীবনের সেই অপ্রত্যাশিত শ্রেষ্ঠ উপহার।&rdquo;
               </p>
               <div className="text-xs text-[#d1c2a5]/80">
-                {ALL_PHOTO_MEMORIES[0].location}
+                স্মৃতির পাতা · চিরন্তন উৎসর্গ · কেএম আজিজুল ইসলাম
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export const PhotoGalleryModal: React.FC<PhotoGalleryModalProps> = ({
               <div
                 key={photo.id}
                 onClick={() => setSelectedPhoto(photo)}
-                className="group relative cursor-pointer bg-[#fcf9f2] p-2.5 pb-5 rounded-md shadow-lg border border-[#e3d7c3] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+                className="group relative cursor-pointer bg-[#fcf9f2] p-2.5 pb-4 rounded-md shadow-lg border border-[#e3d7c3] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 font-suttoni"
               >
                 {/* Polaroid corner pin */}
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-3 bg-[#fef3c7]/80 backdrop-blur-xs border-t border-b border-[#fef08a] rounded-xs rotate-2 pointer-events-none z-10" />
@@ -105,10 +105,10 @@ export const PhotoGalleryModal: React.FC<PhotoGalleryModalProps> = ({
 
                 {/* Polaroid Caption */}
                 <div className="pt-2 text-center">
-                  <span className="block text-[10px] uppercase tracking-wider text-[#9f1239] font-bold font-serif">
-                    {photo.chapterMatch === 0 ? 'Dedication' : `Memory #${photo.chapterMatch || idx + 1}`}
+                  <span className="block text-[11px] text-[#9f1239] font-bold">
+                    {photo.chapterMatch === 0 ? 'উৎসর্গ' : `স্মৃতি #${photo.chapterMatch || idx + 1}`}
                   </span>
-                  <p className="font-['Dancing_Script'] text-xs sm:text-sm text-[#381e28] font-semibold line-clamp-1 mt-0.5">
+                  <p className="text-xs text-[#381e28] font-semibold line-clamp-1 mt-0.5">
                     {photo.caption}
                   </p>
                 </div>
@@ -118,13 +118,13 @@ export const PhotoGalleryModal: React.FC<PhotoGalleryModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-3 border-t border-[#d4af37]/20 bg-[#0f0712] flex items-center justify-between text-xs text-[#d1c2a5]">
-          <span>All 13 photos are beautifully framed inside the 3D Tome</span>
+        <div className="px-6 py-3 border-t border-[#d4af37]/20 bg-[#0f0712] flex items-center justify-between text-xs text-[#d1c2a5] font-suttoni">
+          <span>সবগুলো ১৩টি ছবি থ্রি-ডি বইয়ের পাতায় সুন্দরভাবে ফ্রেম করা হয়েছে</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white transition-colors"
           >
-            Close Gallery
+            গ্যালারি বন্ধ করুন
           </button>
         </div>
       </div>

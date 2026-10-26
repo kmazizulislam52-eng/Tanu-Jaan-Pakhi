@@ -1,6 +1,6 @@
 {
-  "name": "Reasons I Love You — 3D Romantic Keepsake Book",
-  "description": "A hyper-realistic 3D romantic keepsake book with physical paper leaf turning, procedural Web Audio music box, interactive candlelight, and customizable love notes.",
+  "name": "একতরফা ভালোবাসা ও স্কুলের স্মৃতি — কেএম আজিজুল ইসলাম",
+  "description": "একটি ছোট্ট ধাক্কা থেকে শুরু, তারপর সারাজীবন একসঙ্গে থাকার গল্প। লেখক: কেএম আজিজুল ইসলাম।",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
